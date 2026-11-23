@@ -42,18 +42,11 @@ class PartsDataset(Dataset):
 class ResNet18Classifier(nn.Module):
     def __init__(self):
         super().__init__()
-
         self.model = resnet18(weights=ResNet18_Weights.DEFAULT)
-
-        # Замораживаем все параметры
         for param in self.model.parameters():
             param.requires_grad = False
-
-        # Размораживаем последний блок ResNet18
         for param in self.model.layer4.parameters():
             param.requires_grad = True
-
-        # Заменяем классификатор на 8 классов
         self.model.fc = nn.Linear(
             self.model.fc.in_features,
             8
