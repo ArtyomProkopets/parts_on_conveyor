@@ -57,14 +57,9 @@ class ResNet18Classifier(nn.Module):
 
     def train(self, mode=True):
         super().train(mode)
-
-        # Замороженные BatchNorm не обновляют статистику
         self.model.eval()
-
-        # Разрешаем обучение layer4 и fc
         self.model.layer4.train(mode)
         self.model.fc.train(mode)
-
         return self
 
 
