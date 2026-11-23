@@ -1,4 +1,4 @@
-# Parts On Conveyor
+# Parts on conveyor
 
 **Название команды:** Artyom Prokopets
 
