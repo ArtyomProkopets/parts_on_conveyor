@@ -1,0 +1,8 @@
+{
+  "seed": 42,
+  "epochs": 40,
+  "best_val_macro_f1": 0.9958321756043346,
+  "val_accuracy": 0.9958333333333333,
+  "parameters": 11180616,
+  "seconds": 1095.207967042923
+}
